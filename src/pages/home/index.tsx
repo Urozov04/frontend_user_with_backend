@@ -2,7 +2,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import type { IData, IFormData } from "../../types";
 
 const schema = yup
   .object({
@@ -20,8 +19,6 @@ const Home = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-    reset,
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onBlur"
